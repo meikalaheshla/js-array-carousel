@@ -22,14 +22,28 @@ Buon lavoro e buon divertimento! :faccia_leggermente_sorridente:*/
 const prevButton = document.getElementById('button-prev');
 const nextButton = document.getElementById('button-next');
 const carousel = document.getElementById('carousel');
-const images = document.querySelectorAll('#carousel img');
+const gallery = document.getElementById('gallery')
+const srcs = ['img/01.jpg', 'img/02.jpg', 'img/03.jpg', 'img/04.jpg', 'img/05.jpg', 'img/06.jpg', 'img/07.jpg', 'img/08.jpg', 'img/09.jpg', 'img/10.jpg']
 
-let currentActiveIndex = 0;
+// CREO L' ELENCO DELLE IMMAGINI DENTRO LA GALLERY
+let img = '';
+for (let i = 0; i < srcs.length; i++) {
+    img += `<img src ="${srcs[i]}" alt ="img ${i + 1}">`;
+}
+gallery.innerHTML = img
 
 // STATUS 0
 
+const images = document.querySelectorAll('#carousel img')
+let currentActiveIndex = 0;
 
-images[currentActiveIndex].classList.add('d-block')
+images[currentActiveIndex].classList.add('d-block');
+
+
+
+
+
+
 // LOGICA AL CLICK NEXT
 
 /*nextButton.addEventListener('click', function () {
