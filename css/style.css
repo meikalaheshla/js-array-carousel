@@ -1,0 +1,39 @@
+ section {
+     height: 500px;
+ }
+
+
+ #carousel {
+     height: 300px;
+     width: 600px;
+     margin: auto;
+     text-align: center;
+     position: relative;
+
+
+ }
+
+
+ img {
+     height: 100%;
+     width: 100%;
+     display: none;
+     object-fit: cover;
+
+
+ }
+
+ .mybutton {
+     position: absolute;
+     transform: translatey(-50%);
+     top: 50%;
+ }
+
+
+ #button-next {
+     left: 100%;
+ }
+
+ #button-prev {
+     right: 100%;
+ }

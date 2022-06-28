@@ -19,3 +19,31 @@ Consigli del giorno:
 3. Al momento giusto (starà a voi capire quale) rispondete a questa domanda: "Quanti cicli servono?"
 Buon lavoro e buon divertimento! :faccia_leggermente_sorridente:*/
 
+const prevButton = document.getElementById('button-prev');
+const nextButton = document.getElementById('button-next');
+const carousel = document.getElementById('carousel');
+const images = document.querySelectorAll('#carousel img');
+
+let currentActiveIndex = 0;
+
+// STATUS 0
+
+
+images[currentActiveIndex].classList.add('d-block')
+// LOGICA AL CLICK NEXT
+
+/*nextButton.addEventListener('click', function () {
+
+    images[currentActiveIndex].classList.remove('d-block');
+    currentActiveIndex++;
+
+// CONDIZIONE PER IL LOOP
+
+    //if (currentActiveIndex === images.length) {
+       //  currentActiveIndex = 0;
+
+    // }
+
+    images[currentActiveIndex].classList.add('d-block');
+
+})*/
