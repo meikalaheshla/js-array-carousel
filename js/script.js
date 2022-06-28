@@ -24,36 +24,50 @@ const nextButton = document.getElementById('button-next');
 const carousel = document.getElementById('carousel');
 const gallery = document.getElementById('gallery')
 const srcs = ['img/01.jpg', 'img/02.jpg', 'img/03.jpg', 'img/04.jpg', 'img/05.jpg', 'img/06.jpg', 'img/07.jpg', 'img/08.jpg', 'img/09.jpg', 'img/10.jpg']
+// BONUS 2 THUMB
+const thumbnails = document.getElementById('thumbnails')
 
-// CREO L' ELENCO DELLE IMMAGINI DENTRO LA GALLERY
+
+
+
+// CREO L' ELENCO DELLE IMMAGINI DENTRO LA GALLERY e LA THUMB
+
 let img = '';
 for (let i = 0; i < srcs.length; i++) {
     img += `<img src ="${srcs[i]}" alt ="img ${i + 1}">`;
 }
 gallery.innerHTML = img
+thumbnails.innerHTML = img
+
+
 
 // STATUS 0
 
-const images = document.querySelectorAll('#carousel img')
+const galleryImages = document.querySelectorAll('#carousel img')
+const thumbImages = document.querySelectorAll('#thumbnails img')
+
 let currentActiveIndex = 0;
 
-images[currentActiveIndex].classList.add('d-block');
+galleryImages[currentActiveIndex].classList.add('d-block');
+thumbImages[currentActiveIndex].classList.add('active');
 
 // LOGICA AL CLICK NEXT
 
 nextButton.addEventListener('click', function () {
 
-    images[currentActiveIndex].classList.remove('d-block');
+    galleryImages[currentActiveIndex].classList.remove('d-block');
+    thumbImages[currentActiveIndex].classList.remove('active');
     currentActiveIndex++;
 
     // CONDIZIONE PER IL LOOP
 
-    if (currentActiveIndex === images.length) {
+    if (currentActiveIndex === galleryImages.length) {
         currentActiveIndex = 0;
 
     }
 
-    images[currentActiveIndex].classList.add('d-block');
+    galleryImages[currentActiveIndex].classList.add('d-block');
+    thumbImages[currentActiveIndex].classList.add('active');
 
 })
 
@@ -61,17 +75,19 @@ nextButton.addEventListener('click', function () {
 
 prevButton.addEventListener('click', function () {
 
-    images[currentActiveIndex].classList.remove('d-block');
+    galleryImages[currentActiveIndex].classList.remove('d-block');
+    thumbImages[currentActiveIndex].classList.remove('active');
     currentActiveIndex--;
 
     // CONDIZIONE PER IL LOOP
 
     if (currentActiveIndex < 0) {
-        currentActiveIndex = images.length - 1;
+        currentActiveIndex = galleryImages.length - 1;
 
     }
 
-    images[currentActiveIndex].classList.add('d-block');
+    galleryImages[currentActiveIndex].classList.add('d-block');
+    thumbImages[currentActiveIndex].classList.add('active');
 
 })
 
