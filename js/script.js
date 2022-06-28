@@ -39,11 +39,6 @@ let currentActiveIndex = 0;
 
 images[currentActiveIndex].classList.add('d-block');
 
-
-
-
-
-
 // LOGICA AL CLICK NEXT
 
 nextButton.addEventListener('click', function () {
@@ -53,10 +48,10 @@ nextButton.addEventListener('click', function () {
 
     // CONDIZIONE PER IL LOOP
 
-    //if (currentActiveIndex === images.length) {
-    //  currentActiveIndex = 0;
+    if (currentActiveIndex === images.length) {
+        currentActiveIndex = 0;
 
-    // }
+    }
 
     images[currentActiveIndex].classList.add('d-block');
 
@@ -71,10 +66,10 @@ prevButton.addEventListener('click', function () {
 
     // CONDIZIONE PER IL LOOP
 
-    //if (currentActiveIndex === images[0]) {
-    //  currentActiveIndex = images[lenght-1];
+    if (currentActiveIndex < 0) {
+        currentActiveIndex = images.length - 1;
 
-    // }
+    }
 
     images[currentActiveIndex].classList.add('d-block');
 
